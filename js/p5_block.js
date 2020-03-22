@@ -4,100 +4,143 @@ Blockly.Blocks['background'] = {
         .appendField(_background);
     this.appendValueInput("NAME")
         .setCheck("Colour")
-        .appendField("color");
+        .appendField(_colour);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(_color);
+    this.setColour(_c_color);
     this.setTooltip('');
     this.setHelpUrl('');
   }
 };Blockly.Blocks['createcanvas'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("createCanvas");
+        .appendField(_canvas);
     this.appendValueInput("width")
         .setCheck("Number")
-        .appendField("width");
+        .appendField(_w);
     this.appendValueInput("height")
         .setCheck("Number")
-        .appendField("height");
-    this.appendValueInput("canvas")
-        .setCheck("String")
-        .appendField("canvas");
+        .appendField(_h);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(_control);
+    this.setColour(_c_structure);
     this.setTooltip('');
     this.setHelpUrl('');
   }
 };Blockly.Blocks['draw'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("draw");
+        .appendField(_draw);
     this.appendStatementInput("do")
         .setCheck(null)
-        .appendField("do");
+        .appendField(_do);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(_control);
+    this.setColour(_c_structure);
     this.setTooltip('');
     this.setHelpUrl('');
   }
 };Blockly.Blocks['ellipse'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("ellipse");
+        .appendField(_ellipse);
     this.appendValueInput("x")
         .setCheck("Number")
-        .appendField("x");
+        .appendField(_x);
     this.appendValueInput("y")
         .setCheck("Number")
-        .appendField("y");
+        .appendField(_y);
     this.appendValueInput("width")
         .setCheck("Number")
-        .appendField("w");
+        .appendField(_w);
     this.appendValueInput("height")
         .setCheck("Number")
-        .appendField("h");
+        .appendField(_h);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(_shape);
-    this.setTooltip('Draws an ellipse to the screen. ');
+    this.setColour(_c_shape);
+    this.setTooltip(_exp_ellipse);
+    this.setHelpUrl('https://p5js.org/reference/#/p5/ellipse');
+  }
+};Blockly.Blocks['isotriangle'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(_isotriangle);
+    this.appendValueInput("x")
+        .setCheck("Number")
+        .appendField(_x);
+    this.appendValueInput("y")
+        .setCheck("Number")
+        .appendField(_y);
+    this.appendValueInput("width")
+        .setCheck("Number")
+        .appendField(_base);
+    this.appendValueInput("height")
+        .setCheck("Number")
+        .appendField(_h);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(_c_shape);
+    this.setTooltip(_exp_isotriangle);
     this.setHelpUrl('https://p5js.org/reference/#/p5/ellipse');
   }
 };Blockly.Blocks['fill'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("fill");
+        .appendField(_fill);
     this.appendValueInput("NAME")
         .setCheck("Colour")
-        .appendField("color");
+        .appendField(_colour);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(_color);
+    this.setColour(_c_color);
     this.setTooltip('');
     this.setHelpUrl('');
   }
 };Blockly.Blocks['grid'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("add grid with size")
-        .appendField(new Blockly.FieldNumber(0, 0, 100), "NAME");
+        .appendField(_grid)
+        .appendField(new Blockly.FieldNumber(30, 5, 100), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(_control);
+    this.setColour(_c_structure);
     this.setTooltip("");
     this.setHelpUrl("");
+  }
+};Blockly.Blocks['line'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(_line);
+    this.appendValueInput("x1")
+        .setCheck("Number")
+        .appendField("x1");
+    this.appendValueInput("y1")
+        .setCheck("Number")
+        .appendField("y1");
+    this.appendValueInput("x2")
+        .setCheck("Number")
+        .appendField("x2");
+    this.appendValueInput("y2")
+        .setCheck("Number")
+        .appendField("y2");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(_c_shape);
+    this.setTooltip('Draws a line to the screen. ');
+    this.setHelpUrl('https://p5js.org/reference/#/p5/ellipse');
   }
 };Blockly.Blocks['mousex'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("mouseX");
+        .appendField(_mX);
     this.setOutput(true, null);
-    this.setColour(_motion);
+    this.setColour(_c_motion);
     this.setTooltip('');
     this.setHelpUrl('');
   }
@@ -105,9 +148,9 @@ Blockly.Blocks['background'] = {
 Blockly.Blocks['mousey'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("mouseY");
+        .appendField(_mY);
     this.setOutput(true, "Number");
-    this.setColour(_motion);
+    this.setColour(_c_motion);
     this.setTooltip('');
     this.setHelpUrl('');
   }
@@ -115,23 +158,53 @@ Blockly.Blocks['mousey'] = {
 Blockly.Blocks['rect'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("rect");
+        .appendField(_rect);
     this.appendValueInput("x")
         .setCheck("Number")
-        .appendField("x");
+        .appendField(_x);
     this.appendValueInput("y")
         .setCheck("Number")
-        .appendField("y");
+        .appendField(_y);
     this.appendValueInput("width")
         .setCheck("Number")
-        .appendField("w");
+        .appendField(_w);
     this.appendValueInput("height")
         .setCheck("Number")
-        .appendField("h");
+        .appendField(_h);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(_shape);
+    this.setColour(_c_shape);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+Blockly.Blocks['rotate'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(_rotate);
+    this.appendValueInput("degree")
+        .setCheck("Number")
+        .appendField(_degree);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(_c_motion);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+Blockly.Blocks['scale'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(_scale);
+    this.appendValueInput("ratio")
+        .setCheck("Number")
+        .appendField(_ratio);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(_c_motion);
     this.setTooltip('');
     this.setHelpUrl('');
   }
@@ -139,14 +212,14 @@ Blockly.Blocks['rect'] = {
 Blockly.Blocks['setup'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("setup");
+        .appendField(_setup);
     this.appendStatementInput("do")
         .setCheck(null)
-        .appendField("do");
+        .appendField(_do);
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(_control);
+    this.setColour(_c_structure);
     this.setTooltip('The setup() function is called once when the program starts.');
     this.setHelpUrl('https://p5js.org/reference/#/p5/setup');
   }
@@ -156,11 +229,28 @@ Blockly.Blocks['setup'] = {
         .appendField(_stroke);
     this.appendValueInput("NAME")
         .setCheck("Colour")
-        .appendField("color");
+        .appendField(_colour);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(_color);
+    this.setColour(_c_color);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};Blockly.Blocks['translate'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(_translate);
+    this.appendValueInput("x")
+        .setCheck("Number")
+        .appendField(_x);
+    this.appendValueInput("y")
+        .setCheck("Number")
+        .appendField(_y);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(_c_motion);
     this.setTooltip('');
     this.setHelpUrl('');
   }

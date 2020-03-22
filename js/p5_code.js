@@ -7,9 +7,8 @@ Blockly.JavaScript['background'] = function(block) {
 Blockly.JavaScript['createcanvas'] = function(block) {
   var value_width = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_ATOMIC);
   var value_height = Blockly.JavaScript.valueToCode(block, 'height', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_canvas = Blockly.JavaScript.valueToCode(block, 'canvas', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = 'var myCanvas = createCanvas(' + value_width + ',' + value_height +');\n' + 'myCanvas.parent(' + value_canvas + ');\n';
+  var code = 'var myCanvas = createCanvas(' + value_width + ',' + value_height +');\n' + 'myCanvas.parent("myContainer");\n';
   return code;
 };
 Blockly.JavaScript['draw'] = function(block) {
@@ -25,6 +24,15 @@ Blockly.JavaScript['ellipse'] = function(block) {
   var value_h = Blockly.JavaScript.valueToCode(block, 'height', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = 'ellipse(' + value_x + ',' + value_y + ',' + value_w + ',' + value_h + ');\n';
+  return code;
+};
+Blockly.JavaScript['isotriangle'] = function(block) {
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_w = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_h = Blockly.JavaScript.valueToCode(block, 'height', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'simpleTriangle(' + value_x + ',' + value_y + ',' + value_w + ',' + value_h + ');\n';
   return code;
 };
 Blockly.JavaScript['fill'] = function(block) {
@@ -49,6 +57,15 @@ Blockly.JavaScript['grid'] = function(block) {
         " fill(125);\n";
     return code;
 };
+Blockly.JavaScript['line'] = function(block) {
+  var value_x1 = Blockly.JavaScript.valueToCode(block, 'x1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_y1 = Blockly.JavaScript.valueToCode(block, 'y1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_x2 = Blockly.JavaScript.valueToCode(block, 'x2', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_y2 = Blockly.JavaScript.valueToCode(block, 'y2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'line(' + value_x1 + ',' + value_y1 + ',' + value_x2 + ',' + value_y2 + ');\n';
+  return code;
+};
 Blockly.JavaScript['mousex'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = 'mouseX';
@@ -70,6 +87,18 @@ Blockly.JavaScript['rect'] = function(block) {
   var code = 'rect(' + value_x + ',' + value_y + ',' + value_w + ',' + value_h + ');\n';
   return code;
 };
+Blockly.JavaScript['rotate'] = function (block) {
+    var value_deg = Blockly.JavaScript.valueToCode(block, 'degree', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'rotate(' + value_deg + ');\n';
+    return code;
+};
+Blockly.JavaScript['scale'] = function (block) {
+    var value_ratio = Blockly.JavaScript.valueToCode(block, 'ratio', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'scale(' + value_ratio + ');\n';
+    return code;
+};
 Blockly.JavaScript['setup'] = function(block) {
   var statements_do = Blockly.JavaScript.statementToCode(block, 'do');
   // TODO: Assemble JavaScript into code variable.
@@ -81,4 +110,11 @@ Blockly.JavaScript['stroke'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = 'stroke(' + value_name + ');\n';
   return code;
+};
+Blockly.JavaScript['translate'] = function (block) {
+    var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'translate(' + value_x + ',' + value_y + ');\n';
+    return code;
 };

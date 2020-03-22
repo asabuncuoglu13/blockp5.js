@@ -85,21 +85,26 @@
     </table>
 </main>
 <xml id="toolbox" style="display: none">
-    <category name="Structure" colour="#F47A9E">
+    <category name="Structure" colour="#d32f2f">
         <block type="createcanvas"></block>
         <block type="setup"></block>
         <block type="draw"></block>
         <block type="grid"></block>
     </category>
-    <category name="Shape" colour="#F47A9E">
+    <category name="Shape" colour="#388e3c">
         <block type="ellipse"></block>
         <block type="rect"></block>
+        <block type="isotriangle"></block>
+        <block type="line"></block>
     </category>
-    <category name="Events" colour="#F47A9E">
+    <category name="Motion" colour="#1976d2">
+        <block type="rotate"></block>
+        <block type="translate"></block>
+        <block type="scale"></block>
         <block type="mousex"></block>
         <block type="mousey"></block>
     </category>
-    <category name="Color" colour="#F47A9E">
+    <category name="Color" colour="#fbc02d">
         <block type="fill"></block>
         <block type="background"></block>
         <block type="stroke"></block>
@@ -415,11 +420,6 @@
                         <field name="NUM">500</field>
                     </block>
                 </value>
-                <value name="canvas">
-                    <block type="text">
-                        <field name="TEXT">myContainer</field>
-                    </block>
-                </value>
                 <next>
                     <block type="fill">
                         <value name="NAME">
@@ -468,26 +468,6 @@
                                 </value>
                             </block>
                         </value>
-                        <next>
-                            <block type="ellipse">
-                                <value name="x">
-                                    <block type="mousey"></block>
-                                </value>
-                                <value name="y">
-                                    <block type="mousex"></block>
-                                </value>
-                                <value name="width">
-                                    <block type="math_number">
-                                        <field name="NUM">50</field>
-                                    </block>
-                                </value>
-                                <value name="height">
-                                    <block type="math_number">
-                                        <field name="NUM">50</field>
-                                    </block>
-                                </value>
-                            </block>
-                        </next>
                     </block>
                 </statement>
             </block>
@@ -498,15 +478,36 @@
 <!-- Javascript -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Language-->
-<script src="js/language/en.js"></script>
+<script src="js/language/tr.js"></script>
 <script src="js/language/colors.js"></script>
 <!-- bootstrap -->
 <script src="lib/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <!-- blockly -->
-<script src="lib/blockly/blockly_compressed.js"></script>
-<script src="lib/blockly/blocks_compressed.js"></script>
-<script src="lib/blockly/javascript_compressed.js"></script>
+<script src="lib/blockly/blockly_uncompressed.js"></script>
+<script src="lib/blockly/generators/javascript.js"></script>
+<script src="lib/blockly/generators/javascript/logic.js"></script>
+<script src="lib/blockly/generators/javascript/loops.js"></script>
+<script src="lib/blockly/generators/javascript/math.js"></script>
+<script src="lib/blockly/generators/javascript/text.js"></script>
+<script src="lib/blockly/generators/javascript/lists.js"></script>
+<script src="lib/blockly/generators/javascript/colour.js"></script>
+<script src="lib/blockly/generators/javascript/variables.js"></script>
+<script src="lib/blockly/generators/javascript/variables_dynamic.js"></script>
+<script src="lib/blockly/generators/javascript/procedures.js"></script>
 <script src="lib/blockly/msg/js/en.js"></script>
+<script src="lib/blockly/blocks/logic.js"></script>
+<script src="lib/blockly/blocks/loops.js"></script>
+<script src="lib/blockly/blocks/math.js"></script>
+<script src="lib/blockly/blocks/text.js"></script>
+<script src="lib/blockly/blocks/lists.js"></script>
+<script src="lib/blockly/blocks/colour.js"></script>
+<script src="lib/blockly/blocks/variables.js"></script>
+<script src="lib/blockly/blocks/variables_dynamic.js"></script>
+<script src="lib/blockly/blocks/procedures.js"></script>
+<script>
+    goog.require('Blockly.Themes.Zelos');
+    goog.require('Blockly.zelos.Renderer');
+</script>
 
 <!-- p5.js + highlight -->
 <script src="lib/p5.js/p5.min.js"></script>

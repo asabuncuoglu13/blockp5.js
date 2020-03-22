@@ -2,15 +2,36 @@
 <!-- Javascript -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Language-->
-<script src="js/language/en.js"></script>
+<script src="js/language/tr.js"></script>
 <script src="js/language/colors.js"></script>
 <!-- bootstrap -->
 <script src="lib/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <!-- blockly -->
-<script src="lib/blockly/blockly_compressed.js"></script>
-<script src="lib/blockly/blocks_compressed.js"></script>
-<script src="lib/blockly/javascript_compressed.js"></script>
+<script src="lib/blockly/blockly_uncompressed.js"></script>
+<script src="lib/blockly/generators/javascript.js"></script>
+<script src="lib/blockly/generators/javascript/logic.js"></script>
+<script src="lib/blockly/generators/javascript/loops.js"></script>
+<script src="lib/blockly/generators/javascript/math.js"></script>
+<script src="lib/blockly/generators/javascript/text.js"></script>
+<script src="lib/blockly/generators/javascript/lists.js"></script>
+<script src="lib/blockly/generators/javascript/colour.js"></script>
+<script src="lib/blockly/generators/javascript/variables.js"></script>
+<script src="lib/blockly/generators/javascript/variables_dynamic.js"></script>
+<script src="lib/blockly/generators/javascript/procedures.js"></script>
 <script src="lib/blockly/msg/js/en.js"></script>
+<script src="lib/blockly/blocks/logic.js"></script>
+<script src="lib/blockly/blocks/loops.js"></script>
+<script src="lib/blockly/blocks/math.js"></script>
+<script src="lib/blockly/blocks/text.js"></script>
+<script src="lib/blockly/blocks/lists.js"></script>
+<script src="lib/blockly/blocks/colour.js"></script>
+<script src="lib/blockly/blocks/variables.js"></script>
+<script src="lib/blockly/blocks/variables_dynamic.js"></script>
+<script src="lib/blockly/blocks/procedures.js"></script>
+<script>
+    goog.require('Blockly.Themes.Zelos');
+    goog.require('Blockly.zelos.Renderer');
+</script>
 
 <!-- p5.js + highlight -->
 <script src="lib/p5.js/p5.min.js"></script>

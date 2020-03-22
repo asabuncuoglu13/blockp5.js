@@ -7,7 +7,6 @@ export class BlocklyManager {
         this._toolboxText = document.getElementById('toolbox').outerHTML;
         this._toolboxXml = Blockly.Xml.textToDom(this._toolboxText);
         this._workspace = Blockly.inject(this._div, {
-            media: '../../media/',
             toolbox: this._toolboxXml,
             collapse: true,
             comments: true,
@@ -22,6 +21,7 @@ export class BlocklyManager {
             scrollbars: true,
             sounds: true,
             oneBasedIndex: true,
+            renderer: "zelos",
             grid: {
                 spacing: 20,
                 length: 1,
@@ -39,6 +39,7 @@ export class BlocklyManager {
         });
 
         Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), this._workspace);
+        Blockly.getMainWorkspace().setTheme(Blockly.Themes.Zelos);
     }
 
     get area() {

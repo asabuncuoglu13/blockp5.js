@@ -1,23 +1,23 @@
 Blockly.Blocks['rect'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("rect");
+        .appendField(_rect);
     this.appendValueInput("x")
         .setCheck("Number")
-        .appendField("x");
+        .appendField(_x);
     this.appendValueInput("y")
         .setCheck("Number")
-        .appendField("y");
+        .appendField(_y);
     this.appendValueInput("width")
         .setCheck("Number")
-        .appendField("w");
+        .appendField(_w);
     this.appendValueInput("height")
         .setCheck("Number")
-        .appendField("h");
+        .appendField(_h);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(_shape);
+    this.setColour(_c_shape);
     this.setTooltip('');
     this.setHelpUrl('');
   }

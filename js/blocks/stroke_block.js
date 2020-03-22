@@ -4,11 +4,11 @@ Blockly.Blocks['stroke'] = {
         .appendField(_stroke);
     this.appendValueInput("NAME")
         .setCheck("Colour")
-        .appendField("color");
+        .appendField(_colour);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(_color);
+    this.setColour(_c_color);
     this.setTooltip('');
     this.setHelpUrl('');
   }

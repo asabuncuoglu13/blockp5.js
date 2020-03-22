@@ -1,24 +1,24 @@
 Blockly.Blocks['ellipse'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("ellipse");
+        .appendField(_ellipse);
     this.appendValueInput("x")
         .setCheck("Number")
-        .appendField("x");
+        .appendField(_x);
     this.appendValueInput("y")
         .setCheck("Number")
-        .appendField("y");
+        .appendField(_y);
     this.appendValueInput("width")
         .setCheck("Number")
-        .appendField("w");
+        .appendField(_w);
     this.appendValueInput("height")
         .setCheck("Number")
-        .appendField("h");
+        .appendField(_h);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(_shape);
-    this.setTooltip('Draws an ellipse to the screen. ');
+    this.setColour(_c_shape);
+    this.setTooltip(_exp_ellipse);
     this.setHelpUrl('https://p5js.org/reference/#/p5/ellipse');
   }
 };
