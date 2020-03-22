@@ -17,7 +17,7 @@ Blockly.Blocks['rect'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(165);
+    this.setColour(_shape);
     this.setTooltip('');
     this.setHelpUrl('');
   }

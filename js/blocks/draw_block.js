@@ -7,7 +7,7 @@ Blockly.Blocks['draw'] = {
         .appendField("do");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(_control);
     this.setTooltip('');
     this.setHelpUrl('');
   }

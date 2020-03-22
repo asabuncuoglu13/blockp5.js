@@ -85,24 +85,24 @@
     </table>
 </main>
 <xml id="toolbox" style="display: none">
-    <category name="p5.js" colour="#ED225D">
-        <category name="Structure" colour="#F47A9E">
-            <block type="createcanvas"></block>
-            <block type="setup"></block>
-            <block type="draw"></block>
-        </category>
-        <category name="Shape" colour="#F47A9E">
-            <block type="ellipse"></block>
-            <block type="rect"></block>
-        </category>
-        <category name="Events" colour="#F47A9E">
-            <block type="mousex"></block>
-            <block type="mousey"></block>
-        </category>
-        <category name="Color" colour="#F47A9E">
-            <block type="fill"></block>
-            <block type="background"></block>
-        </category>
+    <category name="Structure" colour="#F47A9E">
+        <block type="createcanvas"></block>
+        <block type="setup"></block>
+        <block type="draw"></block>
+        <block type="grid"></block>
+    </category>
+    <category name="Shape" colour="#F47A9E">
+        <block type="ellipse"></block>
+        <block type="rect"></block>
+    </category>
+    <category name="Events" colour="#F47A9E">
+        <block type="mousex"></block>
+        <block type="mousey"></block>
+    </category>
+    <category name="Color" colour="#F47A9E">
+        <block type="fill"></block>
+        <block type="background"></block>
+        <block type="stroke"></block>
     </category>
     <sep></sep>
     <category name="Logic" colour="%{BKY_LOGIC_HUE}">
@@ -401,76 +401,105 @@
     <category name="Variables" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
     <category name="Functions" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
     </xml>
-
-    <xml id="startBlocks" style="display: none">
-        <block type="setup">
-            <statement name="do">
-                <block type="createcanvas">
-                    <value name="width">
-                        <block type="math_number">
-                            <field name="NUM">500</field>
-                        </block>
-                    </value>
-                    <value name="height">
-                        <block type="math_number">
-                            <field name="NUM">500</field>
-                        </block>
-                    </value>
-                    <value name="canvas">
-                        <block type="text">
-                            <field name="TEXT">myContainer</field>
-                        </block>
-                    </value>
-                    <next>
-                        <block type="fill">
-                            <value name="NAME">
-                                <block type="math_number">
-                                    <field name="NUM">255</field>
-                                </block>
-                            </value>
-                        </block>
-                    </next>
-                </block>
-            </statement>
-            <next>
-                <block type="draw">
-                    <statement name="do">
-                        <block type="background">
-                            <value name="NAME">
-                                <block type="math_number">
-                                    <field name="NUM">200</field>
-                                </block>
-                            </value>
-                            <next>
-                                <block type="ellipse">
-                                    <value name="x">
-                                        <block type="mousey"></block>
-                                    </value>
-                                    <value name="y">
-                                        <block type="mousex"></block>
-                                    </value>
-                                    <value name="width">
-                                        <block type="math_number">
-                                            <field name="NUM">50</field>
-                                        </block>
-                                    </value>
-                                    <value name="height">
-                                        <block type="math_number">
-                                            <field name="NUM">50</field>
-                                        </block>
-                                    </value>
-                                </block>
-                            </next>
-                        </block>
-                    </statement>
-                </block>
-            </next>
-        </block>
-    </xml>
+<xml id="startBlocks" style="display: none">
+    <block type="setup">
+        <statement name="do">
+            <block type="createcanvas">
+                <value name="width">
+                    <block type="math_number">
+                        <field name="NUM">500</field>
+                    </block>
+                </value>
+                <value name="height">
+                    <block type="math_number">
+                        <field name="NUM">500</field>
+                    </block>
+                </value>
+                <value name="canvas">
+                    <block type="text">
+                        <field name="TEXT">myContainer</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="fill">
+                        <value name="NAME">
+                            <block type="colour_rgb">
+                                <value name="RED">
+                                    <shadow type="math_number">
+                                        <field name="NUM">200</field>
+                                    </shadow>
+                                </value>
+                                <value name="GREEN">
+                                    <shadow type="math_number">
+                                        <field name="NUM">225</field>
+                                    </shadow>
+                                </value>
+                                <value name="BLUE">
+                                    <shadow type="math_number">
+                                        <field name="NUM">150</field>
+                                    </shadow>
+                                </value>
+                            </block>
+                        </value>
+                    </block>
+                </next>
+            </block>
+        </statement>
+        <next>
+            <block type="draw">
+                <statement name="do">
+                    <block type="background">
+                        <value name="NAME">
+                            <block type="colour_rgb">
+                                <value name="RED">
+                                    <shadow type="math_number">
+                                        <field name="NUM">100</field>
+                                    </shadow>
+                                </value>
+                                <value name="GREEN">
+                                    <shadow type="math_number">
+                                        <field name="NUM">50</field>
+                                    </shadow>
+                                </value>
+                                <value name="BLUE">
+                                    <shadow type="math_number">
+                                        <field name="NUM">0</field>
+                                    </shadow>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="ellipse">
+                                <value name="x">
+                                    <block type="mousey"></block>
+                                </value>
+                                <value name="y">
+                                    <block type="mousex"></block>
+                                </value>
+                                <value name="width">
+                                    <block type="math_number">
+                                        <field name="NUM">50</field>
+                                    </block>
+                                </value>
+                                <value name="height">
+                                    <block type="math_number">
+                                        <field name="NUM">50</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </next>
+    </block>
+</xml>
 
 <!-- Javascript -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<!-- Language-->
+<script src="js/language/en.js"></script>
+<script src="js/language/colors.js"></script>
 <!-- bootstrap -->
 <script src="lib/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <!-- blockly -->
@@ -481,6 +510,7 @@
 
 <!-- p5.js + highlight -->
 <script src="lib/p5.js/p5.min.js"></script>
+<script src="lib/p5.js/p5.play.js"></script>
 <script src="lib/prism/prism.js"></script>
 
 <!-- Add custom blocks -->

@@ -1,14 +1,14 @@
 Blockly.Blocks['background'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("background");
+        .appendField(_background);
     this.appendValueInput("NAME")
-        .setCheck("Number")
+        .setCheck("Colour")
         .appendField("color");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(_color);
     this.setTooltip('');
     this.setHelpUrl('');
   }
@@ -27,7 +27,7 @@ Blockly.Blocks['background'] = {
         .appendField("canvas");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(_control);
     this.setTooltip('');
     this.setHelpUrl('');
   }
@@ -40,7 +40,7 @@ Blockly.Blocks['background'] = {
         .appendField("do");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(_control);
     this.setTooltip('');
     this.setHelpUrl('');
   }
@@ -63,7 +63,7 @@ Blockly.Blocks['background'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(165);
+    this.setColour(_shape);
     this.setTooltip('Draws an ellipse to the screen. ');
     this.setHelpUrl('https://p5js.org/reference/#/p5/ellipse');
   }
@@ -72,21 +72,32 @@ Blockly.Blocks['background'] = {
     this.appendDummyInput()
         .appendField("fill");
     this.appendValueInput("NAME")
-        .setCheck("Number")
+        .setCheck("Colour")
         .appendField("color");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(_color);
     this.setTooltip('');
     this.setHelpUrl('');
+  }
+};Blockly.Blocks['grid'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("add grid with size")
+        .appendField(new Blockly.FieldNumber(0, 0, 100), "NAME");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(_control);
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };Blockly.Blocks['mousex'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("mouseX");
     this.setOutput(true, null);
-    this.setColour(290);
+    this.setColour(_motion);
     this.setTooltip('');
     this.setHelpUrl('');
   }
@@ -96,7 +107,7 @@ Blockly.Blocks['mousey'] = {
     this.appendDummyInput()
         .appendField("mouseY");
     this.setOutput(true, "Number");
-    this.setColour(290);
+    this.setColour(_motion);
     this.setTooltip('');
     this.setHelpUrl('');
   }
@@ -120,7 +131,7 @@ Blockly.Blocks['rect'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(165);
+    this.setColour(_shape);
     this.setTooltip('');
     this.setHelpUrl('');
   }
@@ -135,8 +146,22 @@ Blockly.Blocks['setup'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(_control);
     this.setTooltip('The setup() function is called once when the program starts.');
     this.setHelpUrl('https://p5js.org/reference/#/p5/setup');
+  }
+};Blockly.Blocks['stroke'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(_stroke);
+    this.appendValueInput("NAME")
+        .setCheck("Colour")
+        .appendField("color");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(_color);
+    this.setTooltip('');
+    this.setHelpUrl('');
   }
 };

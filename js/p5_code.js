@@ -33,6 +33,22 @@ Blockly.JavaScript['fill'] = function(block) {
   var code = 'fill(' + value_name + ');\n';
   return code;
 };
+Blockly.JavaScript['grid'] = function(block) {
+    var number_name = block.getFieldValue('NAME');
+    // TODO: Assemble JavaScript into code variable.
+    var code = "  fill(212);\n" +
+        "  stroke(232);\n" +
+        "  for (var i = 0; i < width; i += " + number_name + ") {\n" +
+        "    line(i, 0, i, height);\n" +
+        "    text(i, i + 1, 10);\n" +
+        "  }\n" +
+        "  for (var i = 0; i < height; i += " + number_name + ") {\n" +
+        "    line(0, i, width, i);\n" +
+        "    text(i, 0, i - 1);\n" +
+        "  }\n" +
+        " fill(125);\n";
+    return code;
+};
 Blockly.JavaScript['mousex'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = 'mouseX';
@@ -58,5 +74,11 @@ Blockly.JavaScript['setup'] = function(block) {
   var statements_do = Blockly.JavaScript.statementToCode(block, 'do');
   // TODO: Assemble JavaScript into code variable.
   var code = 'setup = function() {\n' + statements_do + '};\n';
+  return code;
+};
+Blockly.JavaScript['stroke'] = function(block) {
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'stroke(' + value_name + ');\n';
   return code;
 };

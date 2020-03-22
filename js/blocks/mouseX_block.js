@@ -3,7 +3,7 @@ Blockly.Blocks['mousex'] = {
     this.appendDummyInput()
         .appendField("mouseX");
     this.setOutput(true, null);
-    this.setColour(290);
+    this.setColour(_motion);
     this.setTooltip('');
     this.setHelpUrl('');
   }
