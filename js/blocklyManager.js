@@ -37,7 +37,15 @@ export class BlocklyManager {
                 scaleSpeed: 1.2
             }
         });
-
+        this._workspace.configureContextMenu = function (menuOptions) {
+            var screenshotOption = {
+                text: 'Download Screenshot',
+                callback: function() {
+                    Blockly.downloadScreenshot(this._workspace);
+                }
+            };
+            menuOptions.push(screenshotOption);
+        };
         Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), this._workspace);
         Blockly.getMainWorkspace().setTheme(Blockly.Themes.Zelos);
     }

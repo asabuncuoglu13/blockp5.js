@@ -4,6 +4,10 @@ export class Blockp5 {
         this.workspace = workspace;
         this.init_code =
             "let ghost, asterisk;\n" +
+            "let classifier;\n" +
+            "let video;\n" +
+            "let flipVideo;\n" +
+            "let label;\n" +
             "preload = function() {\n" +
             "  ghost = loadAnimation('assets/ghost_standing0001.png', 'assets/ghost_standing0007.png');\n" +
             "  asterisk = loadAnimation('assets/asterisk_circle0000.png', 'assets/asterisk_circle0002.png');\n" +

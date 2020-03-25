@@ -4,7 +4,21 @@ Blockly.JavaScript['background'] = function(block) {
   var code = 'background(' + value_name + ');\n';
   return code;
 };
-Blockly.JavaScript['createcanvas'] = function(block) {
+Blockly.JavaScript['classify_video'] = function(block) {
+    var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+    // TODO: Assemble JavaScript into code variable.
+    var code = '  flipVideo = ml5.flipImage(video);\n' +
+        'classifier.classify(flipVideo, function(error, results) {\n' +
+        '  if (error) {\n' +
+        '    console.error(error);\n' +
+        '    return;\n' +
+        '  }\n' +
+        '  label = results[0].label;\n' +
+        '  // Control the snake and classify again!\n' +
+        statements_name +
+        '  });';
+    return code;
+};Blockly.JavaScript['createcanvas'] = function(block) {
   var value_width = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_ATOMIC);
   var value_height = Blockly.JavaScript.valueToCode(block, 'height', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
@@ -57,6 +71,12 @@ Blockly.JavaScript['grid'] = function(block) {
         " fill(125);\n";
     return code;
 };
+Blockly.JavaScript['height'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'height';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
 Blockly.JavaScript['line'] = function(block) {
   var value_x1 = Blockly.JavaScript.valueToCode(block, 'x1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_y1 = Blockly.JavaScript.valueToCode(block, 'y1', Blockly.JavaScript.ORDER_ATOMIC);
@@ -66,19 +86,39 @@ Blockly.JavaScript['line'] = function(block) {
   var code = 'line(' + value_x1 + ',' + value_y1 + ',' + value_x2 + ',' + value_y2 + ');\n';
   return code;
 };
-Blockly.JavaScript['mousex'] = function(block) {
+Blockly.JavaScript['load_tm_model'] = function (block) {
+    var value_url = Blockly.JavaScript.valueToCode(block, 'url', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'classifier = ml5.imageClassifier(' + value_url + '+ "model.json");\n';
+    return code;
+};Blockly.JavaScript['mousex'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = 'mouseX';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 Blockly.JavaScript['mousey'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = 'mouseY';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
-Blockly.JavaScript['rect'] = function(block) {
+Blockly.JavaScript['preload'] = function(block) {
+  var statements_do = Blockly.JavaScript.statementToCode(block, 'do');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'preload = function() {\n' + statements_do + '};\n';
+  return code;
+};
+Blockly.JavaScript['prepare_video'] = function (block) {
+    var value_w = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_h = Blockly.JavaScript.valueToCode(block, 'height', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'video = createCapture(VIDEO);\n' +
+        'video.size(' + value_w + ', ' + value_h + ');\n' +
+        'video.hide();\n' +
+        'flipVideo = ml5.flipImage(video);\n';
+    return code;
+};Blockly.JavaScript['rect'] = function(block) {
   var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
   var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
   var value_w = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_ATOMIC);
@@ -105,7 +145,13 @@ Blockly.JavaScript['setup'] = function(block) {
   var code = 'setup = function() {\n' + statements_do + '};\n';
   return code;
 };
-Blockly.JavaScript['stroke'] = function(block) {
+Blockly.JavaScript['start_video'] = function (block) {
+    var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'image(flipVideo, ' + value_x + ', ' + value_y + ');\n';
+    return code;
+};Blockly.JavaScript['stroke'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = 'stroke(' + value_name + ');\n';
@@ -117,4 +163,10 @@ Blockly.JavaScript['translate'] = function (block) {
     // TODO: Assemble JavaScript into code variable.
     var code = 'translate(' + value_x + ',' + value_y + ');\n';
     return code;
+};
+Blockly.JavaScript['width'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'width';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };

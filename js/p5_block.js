@@ -12,6 +12,19 @@ Blockly.Blocks['background'] = {
     this.setTooltip('');
     this.setHelpUrl('');
   }
+};Blockly.Blocks['classify_video'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField(_classify_video);
+        this.appendStatementInput("NAME")
+            .setCheck(null)
+            .appendField(_do);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
 };Blockly.Blocks['createcanvas'] = {
   init: function() {
     this.appendDummyInput()
@@ -112,7 +125,17 @@ Blockly.Blocks['background'] = {
     this.setTooltip("");
     this.setHelpUrl("");
   }
-};Blockly.Blocks['line'] = {
+};Blockly.Blocks['height'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(_h);
+    this.setOutput(true, null);
+    this.setColour(_c_shape);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+Blockly.Blocks['line'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(_line);
@@ -135,6 +158,17 @@ Blockly.Blocks['background'] = {
     this.setTooltip('Draws a line to the screen. ');
     this.setHelpUrl('https://p5js.org/reference/#/p5/ellipse');
   }
+};Blockly.Blocks['load_tm_model'] = {
+    init: function() {
+        this.appendValueInput("url")
+            .setCheck("String")
+            .appendField(_load_tm_model);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(_c_ai);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
 };Blockly.Blocks['mousex'] = {
   init: function() {
     this.appendDummyInput()
@@ -155,7 +189,36 @@ Blockly.Blocks['mousey'] = {
     this.setHelpUrl('');
   }
 };
-Blockly.Blocks['rect'] = {
+Blockly.Blocks['preload'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(_preload);
+    this.appendStatementInput("do")
+        .setCheck(null)
+        .appendField("");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(_c_structure);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};Blockly.Blocks['prepare_video'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField(_prepare_video);
+        this.appendValueInput("width")
+            .setCheck("Number")
+            .appendField(_w);
+        this.appendValueInput("height")
+            .setCheck("Number")
+            .appendField(_h);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(_c_ai);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};Blockly.Blocks['rect'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(_rect);
@@ -223,6 +286,22 @@ Blockly.Blocks['setup'] = {
     this.setTooltip('The setup() function is called once when the program starts.');
     this.setHelpUrl('https://p5js.org/reference/#/p5/setup');
   }
+};Blockly.Blocks['start_video'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField(_start_video);
+        this.appendValueInput("x")
+            .setCheck("Number")
+            .appendField(_x);
+        this.appendValueInput("y")
+            .setCheck("Number")
+            .appendField(_y);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(_c_ai);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
 };Blockly.Blocks['stroke'] = {
   init: function() {
     this.appendDummyInput()
@@ -251,6 +330,16 @@ Blockly.Blocks['setup'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(_c_motion);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+Blockly.Blocks['width'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(_w);
+    this.setOutput(true, null);
+    this.setColour(_c_shape);
     this.setTooltip('');
     this.setHelpUrl('');
   }

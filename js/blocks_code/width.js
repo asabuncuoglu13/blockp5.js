@@ -1,6 +1,6 @@
-Blockly.JavaScript['mousex'] = function(block) {
+Blockly.JavaScript['width'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = 'mouseX';
+  var code = 'width';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };

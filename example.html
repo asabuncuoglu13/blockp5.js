@@ -92,10 +92,96 @@
         <block type="grid"></block>
     </category>
     <category name="Shape" colour="#388e3c">
-        <block type="ellipse"></block>
-        <block type="rect"></block>
-        <block type="isotriangle"></block>
-        <block type="line"></block>
+        <block type="ellipse">
+            <value name="x">
+                <shadow type="math_number">
+                    <field name="NUM">40</field>
+                </shadow>
+            </value>
+            <value name="y">
+                <shadow type="math_number">
+                    <field name="NUM">40</field>
+                </shadow>
+            </value>
+            <value name="width">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+            <value name="height">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="rect">
+            <value name="x">
+                <shadow type="math_number">
+                    <field name="NUM">40</field>
+                </shadow>
+            </value>
+            <value name="y">
+                <shadow type="math_number">
+                    <field name="NUM">40</field>
+                </shadow>
+            </value>
+            <value name="width">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+            <value name="height">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="isotriangle">
+            <value name="x">
+                <shadow type="math_number">
+                    <field name="NUM">40</field>
+                </shadow>
+            </value>
+            <value name="y">
+                <shadow type="math_number">
+                    <field name="NUM">40</field>
+                </shadow>
+            </value>
+            <value name="width">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+            <value name="height">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="line">
+            <value name="x1">
+                <shadow type="math_number">
+                    <field name="NUM">40</field>
+                </shadow>
+            </value>
+            <value name="y1">
+                <shadow type="math_number">
+                    <field name="NUM">40</field>
+                </shadow>
+            </value>
+            <value name="x2">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+            <value name="y2">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="width"></block>
+        <block type="height"></block>
     </category>
     <category name="Motion" colour="#1976d2">
         <block type="rotate"></block>
@@ -109,6 +195,41 @@
         <block type="background"></block>
         <block type="stroke"></block>
     </category>
+    <category name="AI" colour="#7b1fa2">
+        <block type="prepare_video">
+            <value name="width">
+                <shadow type="math_number">
+                    <field name="NUM">400</field>
+                </shadow>
+            </value>
+            <value name="height">
+                <shadow type="math_number">
+                    <field name="NUM">400</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="load_tm_model">
+            <value name="url">
+                <shadow type="text">
+                    <field name="TEXT">https://teachablemachine.withgoogle.com/models/OOz_6V1KV/</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="classify_video"></block>
+        <block type="start_video">
+            <value name="x">
+                <shadow type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+            <value name="y">
+                <shadow type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+        </block>
+    </category>
+
     <sep></sep>
     <category name="Logic" colour="%{BKY_LOGIC_HUE}">
         <block type="controls_if"></block>
@@ -504,15 +625,19 @@
 <script src="lib/blockly/blocks/variables.js"></script>
 <script src="lib/blockly/blocks/variables_dynamic.js"></script>
 <script src="lib/blockly/blocks/procedures.js"></script>
+<script src="lib/blockly/screenshot.js"></script>
 <script>
     goog.require('Blockly.Themes.Zelos');
     goog.require('Blockly.zelos.Renderer');
 </script>
 
 <!-- p5.js + highlight -->
-<script src="lib/p5.js/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
 <script src="lib/p5.js/p5.play.js"></script>
 <script src="lib/prism/prism.js"></script>
+<script src="https://unpkg.com/ml5@0.4.2/dist/ml5.min.js"></script>
 
 <!-- Add custom blocks -->
 <script src="js/p5_block.js"></script>

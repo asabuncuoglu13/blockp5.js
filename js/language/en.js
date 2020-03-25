@@ -17,10 +17,17 @@ const _mX = "mouseX";
 const _mY = "mouseY";
 
 //Structure
+const _preload = "preload";
 const _setup = "setup";
 const _draw = "draw";
 const _grid = "add grid with size";
 const _canvas = "create canvas";
+
+// AI
+const _prepare_video = "prepare video cam";
+const _load_tm_model = "load teachable machine model";
+const _classify_video = "start classifying video";
+const _start_video = "start video on canvas";
 
 //InLine
 const _x = "x";

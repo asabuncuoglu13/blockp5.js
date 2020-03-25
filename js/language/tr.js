@@ -17,10 +17,17 @@ const _mX = "imleçX";
 const _mY = "imleçY";
 
 //Structure
+const _preload = "ön-yükle";
 const _setup = "hazırla";
 const _draw = "çiz";
 const _grid = "şu boyutta kareli yüzey oluştur:";
 const _canvas = "çizim ekranı oluştur";
+
+// AI
+const _prepare_video = "video kamerayı hazırla";
+const _load_tm_model = "teachable machine modelini yükle";
+const _classify_video = "videoyu sınıflandırmaya başla";
+const _start_video = "videoyu kanvas üzerinde başlat";
 
 //InLine
 const _x = "x";
